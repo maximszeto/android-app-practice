@@ -38,16 +38,16 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 
 @Composable
 fun ButtonExample() {
-    var clicks by remember { mutableIntStateOf(0) }
+    var clicks by remember { mutableIntStateOf(10) }
 
     Column(
-        modifier = Modifier.padding(16.dp)
+        modifier = Modifier.padding(32.dp)
     ) {
-        Text(text = "Clicks: $clicks")
+        Text(text = "Clicks: $clicks ")
 
         Button(
             onClick = {
-                clicks++
+                clicks--
             }
         ) {
             Text("Add me")
