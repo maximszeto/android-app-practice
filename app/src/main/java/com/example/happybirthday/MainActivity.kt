@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -46,10 +47,8 @@ fun ButtonExample() {
 
     Column(
         modifier = Modifier.padding(32.dp).fillMaxSize(),
-        horizontalAlignment = Alignment.CenterHorizontally
-
-
-
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.spacedBy(10.dp)
     ) {
         Text(text = "Clicks: $clicks ")
 
@@ -61,6 +60,15 @@ fun ButtonExample() {
             Text("Add me")
         }
         Text("hey its me verity")
+
+        Row(
+            modifier = Modifier.padding(50.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text("hey")
+            Text(" Maxim are")
+            Text(" You")
+        }
     }
 }
 
