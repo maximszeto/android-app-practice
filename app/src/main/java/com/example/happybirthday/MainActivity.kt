@@ -63,6 +63,6 @@ fun ButtonExample() {
 @Composable
 fun BirthdayCardPreview() {
     HappyBirthdayTheme {
-        Greeting("Android")
+        ButtonExample()
     }
 }
