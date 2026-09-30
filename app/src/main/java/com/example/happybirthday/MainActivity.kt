@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
+import androidx.compose.material3.Card
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -44,30 +45,33 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun ButtonExample() {
     var clicks by remember { mutableIntStateOf(10) }
+    Card() {
+        Column(
+            modifier = Modifier.padding(32.dp).fillMaxSize(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.spacedBy(10.dp)
+        ) {
+            Text(text = "Clicks: $clicks ")
 
-    Column(
-        modifier = Modifier.padding(32.dp).fillMaxSize(),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.spacedBy(10.dp)
-    ) {
-        Text(text = "Clicks: $clicks ")
-
-        Button(
-            onClick = {
-                clicks--
+            Button(
+                onClick = {
+                    clicks--
+                }
+            ) {
+                Text("Add me")
             }
-        ) {
-            Text("Add me")
-        }
-        Text("hey its me verity")
+            Text("hey its me verity")
 
-        Row(
-            modifier = Modifier.padding(50.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Text("hey")
-            Text(" Maxim are")
-            Text(" You")
+            Card() {
+                Row(
+                    modifier = Modifier.padding(50.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text("hey")
+                    Text(" Maxim are")
+                    Text(" You")
+                }
+            }
         }
     }
 }
